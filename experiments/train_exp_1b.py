@@ -28,7 +28,7 @@ def main_t5_lora(
     random_seed: int = 42,
 ):
     """
-    Fine-tunes a pre-trained T5 using LoRA (PEFT) on the SCAN dataset.
+    Fine-tunes a pre-trained T5 using LoRA on the SCAN dataset.
     """
     # Reproducibility
     torch.manual_seed(random_seed)
@@ -47,7 +47,7 @@ def main_t5_lora(
     train_dataset = SCANDataset(train_path)
     test_dataset = SCANDataset(test_path)
 
-    # Load a small T5 model (e.g., "t5-small")
+    # Load a T5-small
     model_name = "t5-small"
     tokenizer = T5Tokenizer.from_pretrained(model_name)
     base_model = T5ForConditionalGeneration.from_pretrained(model_name).to(device)
@@ -68,7 +68,7 @@ def main_t5_lora(
     print(f"[{model_suffix}] LoRA parameters added to T5. Trainable params:")
     model.print_trainable_parameters()  # see how many params are actually trainable
 
-    # Create DataLoaders with T5 tokenization in a custom collate_fn
+    # Create DataLoaders with T5 tokenization
     def collate_fn(batch):
         src_texts = []
         tgt_texts = []
