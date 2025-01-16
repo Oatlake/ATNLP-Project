@@ -54,7 +54,7 @@ The dataset is tokenized, and both source (commands) and target (actions) vocabu
 ## Usage
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/Oatlake/ATNLP.git
+    git clone https://github.com/Oatlake/ATNLP-Project.git
     cd ATNLP-Project
     ```
 
