@@ -9,9 +9,7 @@ install()
 def run_experiment_t5_lora(n_runs=3):
     """
     Runs Experiment 2 (length split) with T5 + LoRA,
-    using the main_t5_lora function from your existing LoRA script.
     """
-    # Hyperparameters (you can adjust them as needed)
     hyperparams = {
         "learning_rate": 5e-4,
         "batch_size": 64,
@@ -19,7 +17,6 @@ def run_experiment_t5_lora(n_runs=3):
         "device": torch.device("cuda" if torch.cuda.is_available() else "cpu"),
     }
 
-    # Paths for the SCAN length split
     train_path = "data/length_split/tasks_train_length.txt"
     test_path = "data/length_split/tasks_test_length.txt"
     exp_name = "length"
@@ -31,8 +28,6 @@ def run_experiment_t5_lora(n_runs=3):
         print(f"\nStarting T5-LoRA run {run+1}/{n_runs} on the length split with seed {seed}")
         print("=" * 70)
 
-        # Call the existing function from train_exp_1_t5_lora.py
-        # Adjust the call signature if your function differs
         model, token_acc, seq_acc = main_t5_lora(
             train_path=train_path,
             test_path=test_path,
@@ -52,7 +47,7 @@ def run_experiment_t5_lora(n_runs=3):
     mean = np.mean(all_accuracies, axis=0)
     std = np.std(all_accuracies, axis=0)
 
-    # Print a summary like in experiment 1
+    # Print summary 
     print("\nAggregated Stats for All Runs:")
     print("=" * 50)
     print(f"Mean Token Acc : {mean[0]:.4f} ± {std[0]:.4f}")
