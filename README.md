@@ -108,7 +108,7 @@ We aim to reproduce and compare the following key findings:
 - The performance of a our standard transformer model versus a larger pre-trained model
 
 ## Visualisation
-To get a visual representation of some of the results, run the visualisation script:
+To get a visual representation of some of the results run the visualisation script:
 ```bash
 python -m visualisations
 ```
