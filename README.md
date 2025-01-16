@@ -30,7 +30,7 @@ pip install -r requirements.txt
 This repository contains the following components:
 - **`dataset.py`**: A custom data loader for the SCAN dataset, including vocabulary creation and text-token transformations.
 - **`model/transformer.py`**: An implementation of a Transformer-based sequence-to-sequence model, including multi-head attention, positional encodings, encoder-decoder layers, and mask generation.
-- **`train.py`**: The training and evaluation script for the model.
+- **`train.py`**: The training and evaluation script for the model + T5-small model.
 - **`utils/utils.py`**: Greedy and Greedy Oracale decoding.
 - **`experiments/`**: Training scripts for any of the experiments.
 - **`data/`**: Directory for SCAN dataset files. Use the preprocessed dataset from [Transformer-SCAN](https://github.com/jlrussin/transformer_scan).
@@ -54,7 +54,7 @@ The dataset is tokenized, and both source (commands) and target (actions) vocabu
 ## Usage
 1. **Clone the repository**:
     ```bash
-    git clone https://github.com/frasalute/ATNLP-Project.git
+    git clone https://github.com/Oatlake/ATNLP-Project.git
     cd ATNLP-Project
     ```
 
