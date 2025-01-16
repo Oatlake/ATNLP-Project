@@ -73,12 +73,18 @@ The dataset is tokenized, and both source (commands) and target (actions) vocabu
     ```
 
 3. **Train the model**:
-    Use any of the training scripts in the `experiments/` directory to start training the model:
+    Use any of the training scripts in the `experiments/` directory to start training the transformer model:
 ```bash
 python -m experiments.train_exp_3
 ```
-
-
+    To fine-tune the T5-small model go to the experiment b files under the 'experiments/' repository. You can find the full T5-small and LoRa code in the 'train_exp_1b' file along with the script for running the training on experiment 1
+```bash
+python -m experiments.train_exp_1b
+```
+    To fine-tune for experiment 2 using T5-small
+```bash
+python -m experiments.train_exp_2b
+```
 ## Evaluation
 ### Metrics
 The following metrics are used to evaluate model performance:
