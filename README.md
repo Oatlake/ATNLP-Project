@@ -105,7 +105,13 @@ Accuracy: 0.92, Sequence Accuracy: 0.53
 We aim to reproduce and compare the following key findings:
 - Performance of Transformers across dataset splits and sizes.
 - Ability of Transformers to generalize to longer or unseen command sequences.
+- The performance of a our standard transformer model versus a larger pre-trained model
 
+## Visualisation
+To get a visual representation of some of the results, run the visualisation script:
+```bash
+python -m visualisations
+```
 
 ## Acknowledgments
 This project is inspired by the experiments conducted in [Lake & Baroni, 2017](https://arxiv.org/abs/1711.00350). We thank [Transformer-SCAN](https://github.com/jlrussin/transformer_scan) for providing preprocessed SCAN datasets and code references. The Transformer model architecture is adapted from the foundational paper [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762) by Vaswani et al.
