@@ -1,6 +1,6 @@
 # ATNLP-Project: Transformer-Based SCAN Task
 
-This repository is a reimplementation of experiments from the paper [*Generalization without Systematicity: On the Compositional Skills of Sequence-to-Sequence Recurrent Networks*](https://arxiv.org/abs/1711.00350) by Brendan Lake and Marco Baroni. Instead of using RNNs, GRUs, or LSTMs as in the original paper, we implement a Transformer-based model inspired by the architecture proposed in the paper [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762) by Vaswani et al. 
+This repository is a reimplementation of experiments from the paper [*Generalization without Systematicity: On the Compositional Skills of Sequence-to-Sequence Recurrent Networks*](https://arxiv.org/abs/1711.00350) by Brendan Lake and Marco Baroni. Instead of using RNNs, GRUs, or LSTMs as in the original paper, we implement a Transformer-based model inspired by the architecture proposed in the paper [*Attention Is All You Need*](https://arxiv.org/abs/1706.03762) by Vaswani et al. Hereto we compare the resulsts to a pre-trained model: T5-small, which has been fine-tuned using LoRa.
 
 
 ## Introduction
