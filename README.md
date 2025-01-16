@@ -20,6 +20,9 @@ The project is implemented in Python using PyTorch. To get started use Poetry to
 pip install poetry
 
 poetry install
+
+pip install -r requirements.txt
+
 ```
 
 
