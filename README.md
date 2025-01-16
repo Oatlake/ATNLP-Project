@@ -15,7 +15,7 @@ The Transformer model used in this repository follows the implementation done by
 
 
 ## Dependencies
-The project is implemented in Python using PyTorch. To get started use Poetry to install the needed packages.
+The project is implemented in Python using PyTorch. To get started use Poetry to install the needed packages, along with the requirements.txt file.
 ```bash
 pip install poetry
 
