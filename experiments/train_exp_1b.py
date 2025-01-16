@@ -2,14 +2,8 @@ import torch
 import numpy as np
 from rich import print
 from rich.traceback import install
-
-# Hugging Face
 from transformers import T5Tokenizer, T5ForConditionalGeneration, AdamW
-
-# PEFT for LoRA
 from peft import LoraConfig, TaskType, get_peft_model, PeftModel
-
-# Your SCANDataset
 from dataset import SCANDataset
 
 install()
@@ -60,14 +54,13 @@ def main_t5_lora(
 
     # ---- LoRA Configuration ----
     # We specify which modules to apply LoRA to. In T5, the relevant attention layers
-    # often have names like "q", "v", "k", "o" in the attention blocks.
     lora_config = LoraConfig(
-        r=8,  # rank
+        r=8,  
         lora_alpha=32,
         lora_dropout=0.1,
         bias="none",
         task_type=TaskType.SEQ_2_SEQ_LM,
-        target_modules=["q", "k", "v", "o"],  # sometimes just ["q", "v"] is used
+        target_modules=["q", "k", "v", "o"],  
     )
 
     # Wrap base model with LoRA
@@ -162,15 +155,15 @@ def main_t5_lora(
                 input_ids=batch["input_ids"],
                 attention_mask=batch["attention_mask"],
                 max_length=50,
-                num_beams=1,  # greedy
+                num_beams=1,  
             )
             pred_texts = [
                 tokenizer.decode(ids, skip_special_tokens=True) for ids in outputs
             ]
-            # Gold
+            
             gold_texts = []
             for labels_ids in batch["labels"]:
-                labels_ids = labels_ids[labels_ids >= 0]  # remove any -100
+                labels_ids = labels_ids[labels_ids >= 0]  
                 gold_texts.append(tokenizer.decode(labels_ids, skip_special_tokens=True))
 
             for pred, gold in zip(pred_texts, gold_texts):
